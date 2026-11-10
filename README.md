@@ -44,3 +44,9 @@ Para acrescentar uma foto, coloque-a em `assets/produtos/` e crie um cartão `.w
 - WhatsApp: https://wa.me/5571992384745
 
 O projeto não utiliza backend, banco de dados ou processo de build.
+
+
+## Ajustes v1.2
+- A arte da capa usa somente o símbolo com fundo transparente, evitando o quadrado escuro e sobreposição de textos.
+- No celular, o título e a chamada aparecem antes do símbolo, com tamanhos adaptativos.
+- Os três cartões de coleções são links interativos que levam à galeria já filtrada.

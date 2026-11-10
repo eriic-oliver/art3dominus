@@ -25,3 +25,15 @@ function closeLightbox(){lightbox.hidden=true;lightboxImage.removeAttribute('src
 lightbox.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
 lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
 document.addEventListener('keydown',event=>{if(lightbox.hidden)return;if(event.key==='Escape')closeLightbox();if(event.key==='Tab'){event.preventDefault();lightbox.querySelector('.lightbox-close').focus();}});
+
+// As coleções da página inicial abrem a galeria já filtrada.
+document.querySelectorAll('[data-gallery-filter]').forEach(card=>{
+  card.addEventListener('click',event=>{
+    const filter=card.dataset.galleryFilter;
+    const filterButton=document.querySelector(`.filter[data-filter="${filter}"]`);
+    if(!filterButton)return;
+    event.preventDefault();
+    filterButton.click();
+    document.getElementById('galeria')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  });
+});
